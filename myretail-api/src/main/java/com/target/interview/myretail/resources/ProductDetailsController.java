@@ -39,10 +39,12 @@ public class ProductDetailsController {
 		ProductPrice productPrice = productDetailsService.getProductPrice(id);
 		ProductInfo ProductInfo = restTemplate.getForObject(productInfoAPIURL + id + productInfoAPIRequestParam,
 				ProductInfo.class);
-		String productName = ProductInfo.getProduct().getItem().getProductDescription().getTitle();
-		productDetails.setName(productName);
-		productDetails.setId(id);
-		productDetails.setCurrentPrice(productPrice.getCurrentPrice());
+		if (ProductInfo.getProduct().getItem().getProductDescription() != null) {
+			String productName = ProductInfo.getProduct().getItem().getProductDescription().getTitle();
+			productDetails.setName(productName);
+			productDetails.setId(id);
+			productDetails.setCurrentPrice(productPrice.getCurrentPrice());
+		}
 		return productDetails;
 	}
 
@@ -54,7 +56,9 @@ public class ProductDetailsController {
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{id}")
 	public String deleteProduct(@PathVariable int id) {
-		productDetailsService.deleteProductPrice(id);
-		return "Product price for Product[" + id + "] has been delete.";
+		if (productDetailsService.deleteProductPrice(id))
+			return "Product price for Product[" + id + "] has been delete.";
+		else
+			return "Product price does not exist for Product[" + id + "].";
 	}
 }

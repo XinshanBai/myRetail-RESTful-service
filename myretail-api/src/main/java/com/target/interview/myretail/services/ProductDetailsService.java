@@ -20,20 +20,28 @@ public class ProductDetailsService {
 		CurrentPrice currentPrice = new CurrentPrice(value, currencyCode);
 		return productPriceRepository.save(new ProductPrice(id, currentPrice));
 	}
-	
+
 	public ProductPrice getProductPrice(int id) {
 		return productPriceRepository.findById(id);
 	}
-	
+
 	public ProductPrice updateProductPrice(int id, ProductDetails productDetails) {
 		ProductPrice productPrice = productPriceRepository.findById(id);
 		CurrentPrice currentPrice = productDetails.getCurrentPrice();
-		productPrice.setCurrentPrice(currentPrice);
+		if (productPrice == null) {
+			productPrice = new ProductPrice(id, currentPrice);
+		} else {
+			productPrice.setCurrentPrice(currentPrice);
+		}
 		return productPriceRepository.save(productPrice);
 	}
-	
-	public void deleteProductPrice(int id) {
+
+	public boolean deleteProductPrice(int id) {
 		ProductPrice productPrice = productPriceRepository.findById(id);
-		productPriceRepository.delete(productPrice);
+		if (productPrice != null) {
+			productPriceRepository.delete(productPrice);
+			return true;
+		}
+		return false;
 	}
 }
