@@ -10,7 +10,7 @@
 		{
 			"name": "CreatePrice",
 			"request": {
-				"url": "http://localhost:8080/myRetail/v1/products/13860431/createPrice",
+				"url": "http://localhost:8080/myRetail/v1/products/13860430/createPrice",
 				"method": "POST",
 				"header": [
 					{
@@ -30,7 +30,7 @@
 		{
 			"name": "GetProductDetails",
 			"request": {
-				"url": "http://localhost:8080/myRetail/v1/products/13860428",
+				"url": "http://localhost:8080/myRetail/v1/products/13860429",
 				"method": "GET",
 				"header": [
 					{
@@ -50,7 +50,7 @@
 		{
 			"name": "UpdatePrice",
 			"request": {
-				"url": "http://localhost:8080/myRetail/v1/products/13860430",
+				"url": "http://localhost:8080/myRetail/v1/products/13860429",
 				"method": "PUT",
 				"header": [
 					{
@@ -68,9 +68,9 @@
 			"response": []
 		},
 		{
-			"name": "UpdatePrice copy",
+			"name": "DeletePrice",
 			"request": {
-				"url": "http://localhost:8080/myRetail/v1/products/13860431",
+				"url": "http://localhost:8080/myRetail/v1/products/13860435",
 				"method": "DELETE",
 				"header": [
 					{
