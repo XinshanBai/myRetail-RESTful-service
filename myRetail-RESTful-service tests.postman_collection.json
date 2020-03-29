@@ -50,7 +50,7 @@
 		{
 			"name": "UpdatePrice",
 			"request": {
-				"url": "http://localhost:8080/myRetail/v1/products/13860428",
+				"url": "http://localhost:8080/myRetail/v1/products/13860430",
 				"method": "PUT",
 				"header": [
 					{
@@ -61,7 +61,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\": 13860428,\n\t\"name\": \"The Big Lebowski (Blu-ray) (Widescreen)\",\n\t\"current_price\": {\n\t\t\"value\": 13.49,\n\t\t\"currency_code\": \"USD\"\n\t}\n}"
+					"raw": "{\n\t\"current_price\": {\n\t\t\"value\": 20.49,\n\t\t\"currency_code\": \"USD\"\n\t}\n}"
 				},
 				"description": ""
 			},
@@ -81,7 +81,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\": 13860428,\n\t\"name\": \"The Big Lebowski (Blu-ray) (Widescreen)\",\n\t\"current_price\": {\n\t\t\"value\": 13.49,\n\t\t\"currency_code\": \"USD\"\n\t}\n}"
+					"raw": ""
 				},
 				"description": ""
 			},

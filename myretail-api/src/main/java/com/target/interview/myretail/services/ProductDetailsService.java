@@ -25,8 +25,8 @@ public class ProductDetailsService {
 		return productPriceRepository.findById(id);
 	}
 	
-	public ProductPrice updateProductPrice(ProductDetails productDetails) {
-		ProductPrice productPrice = productPriceRepository.findById(productDetails.getId());
+	public ProductPrice updateProductPrice(int id, ProductDetails productDetails) {
+		ProductPrice productPrice = productPriceRepository.findById(id);
 		CurrentPrice currentPrice = productDetails.getCurrentPrice();
 		productPrice.setCurrentPrice(currentPrice);
 		return productPriceRepository.save(productPrice);

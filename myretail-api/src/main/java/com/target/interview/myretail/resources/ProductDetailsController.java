@@ -48,7 +48,7 @@ public class ProductDetailsController {
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{id}")
 	public String updateProductDetails(@PathVariable int id, @RequestBody ProductDetails productDetails) {
-		productDetailsService.updateProductPrice(productDetails);
+		productDetailsService.updateProductPrice(id, productDetails);
 		return "Product price for Product[" + id + "] has been updated.";
 	}
 
