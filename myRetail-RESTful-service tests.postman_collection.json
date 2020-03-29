@@ -1,0 +1,91 @@
+{
+	"variables": [],
+	"info": {
+		"name": "myRetail-RESTful-service tests",
+		"_postman_id": "0e76d3a5-e9ae-d82c-524c-d145009b8b4e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreatePrice",
+			"request": {
+				"url": "http://localhost:8080/myRetail/v1/products/13860431/createPrice",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"current_price\": {\n\t\t\"value\": 50.49,\n\t\t\"currency_code\": \"USD\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductDetails",
+			"request": {
+				"url": "http://localhost:8080/myRetail/v1/products/13860428",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 13860428,\n\t\"name\": \"The Big Lebowski (Blu-ray) (Widescreen)\",\n\t\"current_price\": {\n\t\t\"value\": 13.49,\n\t\t\"currency_code\": \"USD\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePrice",
+			"request": {
+				"url": "http://localhost:8080/myRetail/v1/products/13860428",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 13860428,\n\t\"name\": \"The Big Lebowski (Blu-ray) (Widescreen)\",\n\t\"current_price\": {\n\t\t\"value\": 13.49,\n\t\t\"currency_code\": \"USD\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePrice copy",
+			"request": {
+				"url": "http://localhost:8080/myRetail/v1/products/13860431",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 13860428,\n\t\"name\": \"The Big Lebowski (Blu-ray) (Widescreen)\",\n\t\"current_price\": {\n\t\t\"value\": 13.49,\n\t\t\"currency_code\": \"USD\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
